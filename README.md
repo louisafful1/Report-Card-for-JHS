@@ -1,2 +1,2 @@
 # Report Card for JHS
- This website allows a teacher to take the marks of every student in a particular class 
+This Website enables a teacher to grade each student in a certain class.
