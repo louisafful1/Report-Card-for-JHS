@@ -1,5 +1,5 @@
 <?php
-require("session.php");
+require("include/session.php");
 include("include/database.php");
 if(isset($_POST["fname"]) and isset($_POST["sname"])){
 	$fname=trim($_POST["fname"], " .");
@@ -17,10 +17,7 @@ alert('Submitted');
 
 }
 
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -29,8 +26,8 @@ alert('Submitted');
 </head>
 <body>
 <form action="" name="add_student" method="post">
-	Enter Student First Name: <input type="text" name="fname" required=""><br>
-	Enter Student First Name:<input type="text" name="sname" required=""><br>
+	Enter Student First Name: <input type="text" name="fname" required=""><br><br>
+	Enter Student First Name:<input type="text" name="sname" required=""><br><br>
 	<input type="submit" name="submit" value="Add Student">
 
 	<br><br>
