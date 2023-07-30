@@ -1,2 +1,2 @@
 # Report Card for JHS
-This Website enables a teacher to grade each student in a certain class.
+Welcome to the Report card for! This project aims to facilitate student result management, user authentication, and the submission of student marks for various subjects. The system consists of several PHP files and a MySQL database.
