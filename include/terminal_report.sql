@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2022 at 10:12 PM
+-- Generation Time: Jul 30, 2023 at 05:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -51,10 +51,18 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `first_name`, `surname`) VALUES
-(36, 'Charles', 'ghjk'),
-(39, 'ghjkl', 'ghjk'),
-(40, 'ghjklkjh', 'bhjklkjh'),
-(43, 'Sylvester', 'Alloo');
+(43, 'Sylvester', 'Alloo'),
+(44, 'Samuel', 'Cobbinah'),
+(45, 'LOUIS', 'AFFUL'),
+(47, 'Margaret', 'Afful'),
+(48, 'Lawson', 'Mensah'),
+(49, 'Jeff', 'Worlali'),
+(50, 'Henry', 'Adams'),
+(51, 'Stephen', 'Kojo'),
+(52, 'Another', 'Prof'),
+(53, 'Moses', 'Armah'),
+(54, 'Bright', 'Kwarteng'),
+(55, 'Henry', 'Obeng');
 
 -- --------------------------------------------------------
 
@@ -109,7 +117,9 @@ INSERT INTO `user` (`user_id`, `username`, `password`) VALUES
 --
 ALTER TABLE `report`
   ADD PRIMARY KEY (`report_id`),
-  ADD KEY `student_fk_id` (`student_fk_id`);
+  ADD KEY `subject_fk_id` (`subject_fk_id`),
+  ADD KEY `subject_fk_id_2` (`subject_fk_id`),
+  ADD KEY `report_ibfk_1` (`student_fk_id`);
 
 --
 -- Indexes for table `students`
@@ -137,19 +147,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1299;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
@@ -159,7 +169,7 @@ ALTER TABLE `subjects`
 -- Constraints for table `report`
 --
 ALTER TABLE `report`
-  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`student_fk_id`) REFERENCES `students` (`student_id`);
+  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`subject_fk_id`) REFERENCES `subjects` (`subject_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
